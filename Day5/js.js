@@ -8,4 +8,4 @@ searchBtn.addEventListener("click", function() {
 
     this.previousElementSibling.focus();
 
-});
+})
