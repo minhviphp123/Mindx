@@ -1,11 +1,19 @@
-const searchBtn = document.querySelector("button");
+const btn = document.querySelector(".btn");
 
-const searchBox = document.querySelector(".searchBox");
+const key = document.querySelector(".key");
 
-searchBtn.addEventListener("click", function() {
+const vongTron = document.querySelector(".vongTron");
 
-    searchBox.classList.toggle("btn");
+const duoi = document.querySelector(".duoi");
+console.log(duoi);
 
-    this.previousElementSibling.focus();
+btn.addEventListener("click", function() {
+    btn.classList.add("hide");
+    key.classList.remove("hide");
+})
 
-});
+document.addEventListener("keydown", function(e) {
+    vongTron.innerText = e.which;
+    duoi.innerHTML = e.key;
+
+})
