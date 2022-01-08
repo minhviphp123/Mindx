@@ -1,85 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+    --success-color: #2691d9;
+    --error-color: #e74c3c;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    background: linear-gradient(120deg, #3ca7ee, #9b408f);
     height: 100vh;
-    width: 100vw;
-    background: rgb(145, 185, 104);
-    font-family: 'Bakbak One', cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button {
-    border-radius: 7px;
-    border: none;
-    outline: none;
-    height: 60px;
-    width: 220px;
-    font-size: 21px;
-}
-
-.hide {
-    display: none;
-    transition: 0.5s;
-}
-
-.key {
-    width: 1200px;
-    margin: 150px auto;
-    transition: 0.5s;
-}
-
-.header {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.vongTron {
-    width: 190px;
-    height: 190px;
-    background: cornflowerblue;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 190px;
-    color: white;
-    font-size: 40px;
-    border: solid 4px white;
-}
-
-.MHT {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 100px 0;
-}
-
-.chuNhat {
-    width: 140px;
-    margin: 0 50px;
-    text-align: center;
-    border-radius: 10px;
     overflow: hidden;
 }
 
-.tren {
-    background: rgb(50, 187, 50);
-    overflow: hidden;
-    padding: 5px 0;
-}
-
-.duoi {
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
     background: white;
-    overflow: hidden;
-    padding: 5px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.red {
-    background: crimson;
+.container h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.container form {
+    padding: 0 40px;
+}
+
+form .form-control {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 40px 0;
+}
+
+.form-control.success {
+    border-bottom-color: #2691d9;
+}
+
+.form-control.error {
+    border-bottom-color: #e74c3c;
+}
+
+.form-control input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+small {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 3px;
+    color: #e74c3c;
+}
+
+input {
+    background: var(--success-color);
+    width: 260px;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 13px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.signup_link {
+    margin-bottom: 10px;
+}
+
+.form-control span::before {
+    content: '';
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #2691d9;
+    transition: 0.3s;
+}
+
+.form-control input:focus~span::before {
+    width: 100%;
+}
+
+.signup_link a {
+    color: var(--success-color);
+    text-decoration: none;
+    cursor: pointer;
 }
