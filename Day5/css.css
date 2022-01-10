@@ -73,15 +73,19 @@ small {
     color: #e74c3c;
 }
 
-input {
+button {
     background: var(--success-color);
     width: 260px;
     height: 35px;
-    border-radius: 4px;
+    border-radius: 5px;
     border: none;
     margin-bottom: 13px;
     font-weight: bold;
     font-size: 19px;
+}
+
+button:hover {
+    background: #0e72b4;
 }
 
 .signup_link {
@@ -91,7 +95,7 @@ input {
 .form-control span::before {
     content: '';
     position: absolute;
-    top: 53px;
+    top: 40px;
     left: 0;
     width: 0%;
     height: 3px;
