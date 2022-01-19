@@ -1,96 +1,63 @@
-const btn = document.querySelector("button");
+let posts = [
 
-const username = document.querySelector("#username");
+    {
+        name: "Tran Quang Minh",
+        class: "KTN59CL",
+        code: "79048"
+    },
 
-const email = document.querySelector("#email");
-
-const password = document.querySelector("#password");
-
-const confirmPassword = document.querySelector(".cf");
-
-const form = document.querySelector("form");
-
-let listInput = [username, email, password, confirmPassword];
-
-function showError(input, message) {
-
-    let parent = input.parentElement;
-
-    let small = parent.querySelector("small");
-
-    parent.classList.add("error");
-
-    small.innerText = message;
-
-}
-
-function showSuccess(input) {
-    let parent = input.parentElement;
-
-    parent.classList.add("success");
-}
-
-function checkEmpty(listInput) {
-
-    let isEmpty = false;
-
-    listInput.forEach(input => {
-
-        input.value = input.value.trim();
-
-        if (input.value == "") {
-
-            isEmpty = true;
-
-            showError(input, "dien vao day");
-
-        } else {
-
-            showSuccess(input);
-
-        }
-
-    });
-
-    return isEmpty;
-}
-
-function checkLength(a, min, max) {
+    {
+        name: "Tran Quang Minh",
+        class: "KTN59CL",
+        code: "79048"
+    },
 
 
-    if (a.value.length < min) {
-        showError(a, `ki tu qua ngan, phai co it nhat ${min} ky tu`);
+    {
+        name: "Tran Quang Minh",
+        class: "KTN59CL",
+        code: "79048"
+    },
+
+
+    {
+        name: "Tran Quang Minh",
+        class: "KTN59CL",
+        code: "79048"
+    },
+
+
+];
+
+const ip = document.querySelector("input");
+
+const leftPost = document.querySelector(".left");
+
+//cac buoc lam:
+//b1:event input clear data 
+//render data by value 
+
+function render(array, container) {
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+
+        container.innerHTML = `
+        
+        <div class="post">
+
+            <img src="./fio.jpg" alt="">
+
+            <h4>${element.name}</h4>
+            <p>${element.class}</p>
+            <small>${element.code}</small>
+
+        </div>
+
+        
+        `
+
     }
 
-    if (a.value.length > max) {
-        showError(a, `ki tu qua dai, chi dc nhieu nhat la ${max} ky tu`)
-    }
+
 }
-
-function checkMatchPassword(a, b) {
-    if (a.value != b.value) {
-
-        showError(b, "mk khong trung khop");
-        return true;
-    }
-
-    return false;
-}
-
-btn.addEventListener("click", function(e) {
-
-    e.preventDefault();
-
-    checkEmpty(listInput);
-
-    checkLength(username, 3, 15);
-
-    checkLength(email, 3, 15);
-
-    checkLength(password, 3, 15);
-
-    checkLength(confirmPassword, 3, 15);
-
-    checkMatchPassword(password, confirmPassword);
-
-});

@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-:root {
-    --success-color: #2691d9;
-    --error-color: #e74c3c;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -12,103 +7,72 @@
 }
 
 body {
-    background: linear-gradient(120deg, #3ca7ee, #9b408f);
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+.header {
+    height: 120px;
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+    padding-top: 5px;
+    color: white;
+}
+
+.grid {
+    width: 1490px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header_navbar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
 }
 
-.container h1 {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.container form {
-    padding: 0 40px;
-}
-
-form .form-control {
+.header_navbar-item {
+    display: inline;
+    margin: 0 8px;
     position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 40px 0;
 }
 
-.form-control.success {
-    border-bottom-color: #2691d9;
+i {
+    font-size: 19px;
+    color: white;
 }
 
-.form-control.error {
-    border-bottom-color: #e74c3c;
+i:hover {
+    cursor: pointer;
 }
 
-.form-control input {
-    width: 100%;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
+.header-item-link {
+    text-decoration: none;
+    color: white;
 }
 
-small {
+.separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: white 1px solid;
+    height: 16px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* headerQR code */
+
+.header_QR {
+    background-color: white;
+    width: 186px;
     position: absolute;
     left: 0;
     top: 100%;
-    margin-top: 3px;
-    color: #e74c3c;
+    border-radius: 2px;
 }
 
-button {
-    background: var(--success-color);
-    width: 260px;
-    height: 35px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 13px;
-    font-weight: bold;
-    font-size: 19px;
-}
+.header-QR-img {}
 
-button:hover {
-    background: #0e72b4;
-}
+.header_qr-apps {}
 
-.signup_link {
-    margin-bottom: 10px;
-}
-
-.form-control span::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: #2691d9;
-    transition: 0.3s;
-}
-
-.form-control input:focus~span::before {
-    width: 100%;
-}
-
-.signup_link a {
-    color: var(--success-color);
-    text-decoration: none;
-    cursor: pointer;
-}
+.header_qr-apps-download-img {}
