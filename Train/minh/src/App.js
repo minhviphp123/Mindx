@@ -1,11 +1,11 @@
 import './index.css';
-import Header from './components/form/body';
+import Body from './components/form/body';
 
 function App(props) {
   return (
 
     <div>
-        <Header />
+        <Body />
     </div>  
 
   
