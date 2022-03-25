@@ -5,13 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <div className='toDoList'>
-    <div className='require'>Enter your task here...</div>
-    <i class="fa-solid fa-swords"></i>
-  <App work='clean up bedroom' />
-  <App  work='do exercises'/>
-  <App  work='jogging'/>
-</div>,
+  <App/>,
   document.getElementById('root')
 );
 

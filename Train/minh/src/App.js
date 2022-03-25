@@ -1,17 +1,18 @@
+import './index.css';
+import Header from './components/form/body';
+
 function App(props) {
   return (
 
-    <div className="container">
-
-        <ul>
-            <li>{props.work}</li>
-        </ul>
-
-        </div>  
+    <div>
+        <Header />
+    </div>  
 
   
   );
 }
 
 export default App;
+
+
 
