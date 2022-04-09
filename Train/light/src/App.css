@@ -1,38 +1,52 @@
-.app{
+.head{
+    width: 100%;
     border: 1px solid black;
-    padding: 20px;
-    text-align: center;
-}
-
-.lights{
-    margin-top: 15px;
-    display: flex;
-    width: 80px;
-    justify-content: space-evenly;
-}
-
-.light{
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-}
-
-.redLight{
-    background: red;
-}
-
-.greenLight{
-    background: green;
-}
-
-.yellowLight{
-    background: yellow;
+    background: rgb(92, 7, 92);
+    padding: 20px 0;
 }
 
 button{
-    width: 60px;
-    height: 27px;
+    padding: 10px 20px;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
+}
+
+form{
+    margin: 20px;
+    padding: 26px;
+}
+
+table{
+    width: 100%;
+}
+
+tr{
+    display: flex;
+    width: 100%;
+    padding: 6px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+td{
+    width: 100%;
+}
+
+input{
+    padding: 3px 20px 3px 90px;
+    border-radius: 5px;
+    border: none;
+}
+
+.title{
+    transform: translateX(-55px);
+}
+
+.btns{
+    transform: translate(170px, 20px);
+}
+
+button + button {
+    margin-left: 10px;
 }

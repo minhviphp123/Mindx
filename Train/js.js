@@ -1,28 +1,22 @@
-let a = [2, 1, 3, 2, 8, 5, 7];
-let brr = [];
+let a = [];
+let b;
 
-for (let index = 0; index < a.length; index++) {
-    const element = a[index];
-    
-    let pos = -1;
+const button = document.querySelector('button');
 
-    for (let j = index - 1; j >= 0; j--) {
+document.addEventListener('scroll', () => {
 
-        if(a[j] > element) {
-
-            pos = j;
-            break;
-
-        }
-        
+    if(document.documentElement.scrollTop < a[a.length - 1]) {
+        button.style.display = 'block';
+    }else{
+        button.style.display = 'none';
     }
-    
-    if(pos >= 0){
-        brr.push(pos + 1);
-    }
-    else{
-        brr.push(pos);
-    }
-}
 
-console.log(brr);
+    a = [];
+    a.push(document.documentElement.scrollTop);
+})
+
+button.addEventListener('click', () => {
+    button.style.display = 'none';
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})

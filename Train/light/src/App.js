@@ -1,85 +1,65 @@
-import { useState } from "react";
 import "./App.css";
+import Form from "./comps/header";
+import { useState } from "react";
+import Expense from "./comps/Expenses";
+
+const generateId = () => Math.floor(Math.random() * 1000000);
+
+const initialState = [
+
+    {
+      id: generateId(),
+      date: new Date('2022-04-05'),
+      name: 'reading',
+      amout: 100
+    },
+    {
+      id: generateId(),
+      date: new Date('2022-04-04'),
+      name: 'listen to muzik',
+      amout: 2000
+    },
+    {
+      id: generateId(),
+      date: new Date('2022-04-03'),
+      name: 'playing girl',
+      amout: 200
+    },
+    {
+      id: generateId(),
+      date: new Date('2022-04-02'),
+      name: 'LOL',
+      amout:1500
+    },
+    
+]
 
 function App() {
-  
-  let [light, setLight] = useState(0)
 
-  const nextLight = () => {
-      setLight(light + 1);
-  }
+    const [expenseItems, setExpenseItems] = useState([initialState]); 
 
-  if(light === 3){
-      light = 0;
-  }
-
-  if(light === 0) {
-
-    return (
-
-      <div className="app">
-
-          <button onClick={nextLight}>Next</button>
-
-          <div className="lights">
-
-              <div className="light redLight"></div>
-              <div className="light"></div>
-              <div className="light"></div>
-
-          </div>
-
-      </div>
-
-  );
-
-  }
-
-  else if (light === 1){ 
+    const handleAddExpense = (value) => {
+        setExpenseItems((prev) => {
+            return [
+              ...prev,
+              {
+                id: generateId(),
+                date: new Date(value.date),
+                name: value.name,
+                amout: value.amout
+              }
+            ];
+        })
+    }
 
     return (
-
-      <div className="app">
-
-          <button onClick={nextLight}>Next</button>
-
-          <div className="lights">
-
-              <div className="light"></div>
-              <div className="light greenLight"></div>
-              <div className="light"></div>
-
-          </div>
-
+      <div>
+        <Form onSubmit={handleAddExpense}/>
+        <Expense expenseItems={expenseItems}/>
       </div>
-
-  );
-
-  }else{
-
-    return (
-
-      <div className="app">
-
-          <button onClick={nextLight}>Next</button>
-
-          <div className="lights">
-
-              <div className="light"></div>
-              <div className="light"></div>
-              <div className="light yellowLight"></div>
-
-          </div>
-
-      </div>
-
-  );
-
-  }
-
-  console.log(light);
-
-  
+    );
 }
+
+
 
 export default App;
