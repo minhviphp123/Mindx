@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom"
 import App from "./App";
-import Login from "./comps/Login";
+import Login from "./comps/Sign";
 
 function Router () {
 

@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(29, 29, 141);
+  transform: translateX(200px);
+}
+
+.ball{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 20px;
+}
